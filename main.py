@@ -1,3 +1,4 @@
+
 import flet as ft
 
 def main(page: ft.Page):
@@ -7,7 +8,8 @@ def main(page: ft.Page):
 
     
     usuario_prueba= "player124"
-    contrasena_prueba= "1020"
+    contraseña_prueba= "1020"
+    correo_prueba= "player124@gmail.com"
 
     username = ft.TextField(label="username", width=280)
     correo = ft.TextField(label="correo electronico", width=280)
@@ -34,14 +36,16 @@ def main(page: ft.Page):
         )
 
     def iniciar_sesion(e):
-
-        if username.value == usuario_demo and contraseña.value == password_demo:
-            pagina_principal()
-
-        else:
-            mensaje.value = "Usuario o contraseña incorrectos"
-            mensaje.color = "red"
-            page.update()
+     if (
+        username.value == usuario_prueba and
+        contraseña.value == contraseña_prueba and
+        correo.value == correo_prueba
+    ):
+        pagina_principal()
+     else:
+        mensaje.value = "Usuario, correo o contraseña incorrectos"
+        mensaje.color = "red"
+        page.update()
 
     sesion = ft.Container(
         width=350,
